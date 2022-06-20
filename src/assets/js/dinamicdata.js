@@ -1,7 +1,7 @@
 class Box {
     constructor(text) {
         this.text = text
-        this.checked = false
+        this.checked = true
     }
 }
 
@@ -13,7 +13,7 @@ class Filter {
     }
 
     getBoxesChecked() {
-        return this.boxes.filter(box => box.checked).length
+        return this.boxes.filter(box => box.checked == true).length
     }
 }
 

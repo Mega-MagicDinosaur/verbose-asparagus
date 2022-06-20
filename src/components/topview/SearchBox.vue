@@ -4,7 +4,7 @@
         <IconButton class="icon-button" icon="toggle-icon"/>
         <div class="active-filters-label">
             <span>Active Filters</span>
-            <h3>6/{{this.button_filters.length}}</h3> <!-- Change!! -->
+            <h3>{{active_filters.length}}/{{this.button_filters.length}}</h3> <!-- Change!! -->
         </div>
         <FiltersBox class="filters-box" :active_filters="this.active_filters" />
         <SubmitButton class="ssubmit-button" text="Save Search" />
@@ -35,7 +35,7 @@ export default {
     },
     computed: {
         active_filters() {
-            return this.button_filters.filter(filter => filter.getBoxesChecked > 0)
+            return this.button_filters.filter(filter => filter.getBoxesChecked() > 0)
         }
     }
 }

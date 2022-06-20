@@ -7,7 +7,7 @@
 
     <div class="top-view-wrapper">
       <ViewTitle class="view-title" title="RadarView" subtitle="Move freely to find out" />
-      <FiltersEditor :filters="this.filters" :buttons="this.buttons" class="filters-editor" />
+      <FiltersEditor class="filters-editor" :filters="this.filters" :buttons="this.buttons" />
     </div>
   </main>
 </template>
@@ -37,5 +37,5 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 </style>

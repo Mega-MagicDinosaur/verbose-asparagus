@@ -1,9 +1,9 @@
 <template>
     <div class="buttons-box-wrapper">
         <div class="button-wrapper"  v-for="(button, index) in this.buttons" :key="button">
-            <IconButton type="button" class="btn btn-primary" 
+            <IconButton type="button" class="btn btn-primary icon-button" 
             :class="(index != selected_button)? 'button-unfocused':'button-focused'"
-            @input="this.select_button(index)" :icon="button.icon" />
+            @click="this.select_button(index)" :icon="button.icon" />
             <span class="button-text">{{button.name}}</span>
         </div>
     </div>
