@@ -6,7 +6,7 @@
         :icon="this.icons[index]" 
         :primary_button="(index == primary_button-1)?'true' : 'false'" />
 
-        <button class="options-button"><GoogleIcon icon="options-icon" /></button> <!-- options button -->
+        <button class="options-button"><GoogleIcon icon="manage_accounts" /></button> <!-- options button -->
     </div>
 </template>
 

@@ -1,14 +1,14 @@
 <!-- icons+text here are going to be static, since they don't matter very much -->
 <template>
     <div class="search-box-wrapper">
-        <IconButton class="icon-button" icon="toggle-icon"/>
+        <IconButton class="icon-button" icon="tune"/>
         <div class="active-filters-label">
             <span>Active Filters</span>
             <h3>{{active_filters.length}}/{{this.button_filters.length}}</h3> <!-- Change!! -->
         </div>
         <FiltersBox class="filters-box" :active_filters="this.active_filters" />
         <SubmitButton class="ssubmit-button" text="Save Search" />
-        <IconButton class="icon-button" icon="city-icon"/>
+        <IconButton class="icon-button" icon="domain"/>
         <div class="found-companies-label"> <!-- Radicaly change -->
             <span>Found</span> <br>
             <span>loading...</span>

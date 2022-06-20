@@ -10,17 +10,18 @@ class Button {
 }
 
 const buttons = [
-    new Button('button1', 'icon1', 'text1', filters[0]),
-    new Button('button2', 'icon2', 'text2', filters[1]),
-    new Button('button3', 'icon3', 'text3', filters[2]),
-    new Button('button4', 'icon4', 'text4', filters[3]),
+    new Button('geographical', 'public', 'text1', filters[0]),
+    new Button('trends', 'trending_up', 'text2', filters[1]),
+    new Button('BOM', 'lan', 'text3', filters[2]),
+    new Button('other?', 'battery_saver', 'text4', filters[3]),
 ]
 
 const nav_icons = [
-    {icon: 'icon1', url: '#'},
-    {icon: 'icon2', url: '#'},
-    {icon: 'icon3', url: '#'},
-    {icon: 'icon4', url: '#'},
+    {icon: 'radar', url: '#'},
+    {icon: 'list', url: '#'},
+    {icon: 'save', url: '#'},
+    {icon: 'feed', url: '#'},
+    {icon: 'newspaper', url: '#'},
 ]
 
 export { buttons }
