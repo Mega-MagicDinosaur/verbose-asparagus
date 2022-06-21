@@ -2,8 +2,16 @@
 
 .view-wrapper {
     background-color: $background-color;
+    overflow: hidden;
 }
 
 .top-view-wrapper {
     padding-top: 2vh;
+}
+
+.center-view-wrapper {
+    position: absolute;
+
+    top: 100px;
+    left: 100px;
 }

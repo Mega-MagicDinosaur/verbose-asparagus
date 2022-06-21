@@ -1,7 +1,7 @@
 class Box {
     constructor(text) {
         this.text = text
-        this.checked = true
+        this.checked = false
     }
 }
 

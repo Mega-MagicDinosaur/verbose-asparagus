@@ -10,7 +10,9 @@
         <ViewTitle class="view-title" title="RadarView" subtitle="Move freely to find out" />
         <FiltersEditor class="filters-editor" :filters="this.filters" :buttons="this.buttons" />
       </div> 
-      
+      <div class="center-view-wrapper">
+        <RoundMenu :buttons_data="this.buttons" />
+      </div>
     </div>
   </main>
 </template>
@@ -24,13 +26,15 @@ import { buttons } from './assets/js/staticdata.js'
 import { nav_icons } from './assets/js/staticdata.js'
 
 import { filters } from './assets/js/dinamicdata.js'
+import RoundMenu from './components/centerview/RoundMenu.vue'
 
 export default {
   name: 'App',
   components: {
     VerticalNav,
     FiltersEditor,
-    ViewTitle
+    ViewTitle,
+    RoundMenu
 },
   data() { return {
       buttons: buttons,
