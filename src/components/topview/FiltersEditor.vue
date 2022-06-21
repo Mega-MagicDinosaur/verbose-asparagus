@@ -33,5 +33,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/topview/filterseditor_style.scss">
 </style>

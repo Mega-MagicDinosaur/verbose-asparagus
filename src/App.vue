@@ -3,11 +3,14 @@
   </header>
 
   <main>
-    <VerticalNav class="vertical-nav" :icons="nav_icons" :primary_button="1"/>
+    <div class="view-wrapper">
+      <VerticalNav class="vertical-nav" :icons="nav_icons" :primary_button="1"/>
 
-    <div class="top-view-wrapper">
-      <ViewTitle class="view-title" title="RadarView" subtitle="Move freely to find out" />
-      <FiltersEditor class="filters-editor" :filters="this.filters" :buttons="this.buttons" />
+      <div class="top-view-wrapper">
+        <ViewTitle class="view-title" title="RadarView" subtitle="Move freely to find out" />
+        <FiltersEditor class="filters-editor" :filters="this.filters" :buttons="this.buttons" />
+      </div> 
+      
     </div>
   </main>
 </template>
@@ -37,5 +40,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="./assets/css/generics/app_style.scss">
 </style>

@@ -1,7 +1,5 @@
 <template>
-    <div class="google-icon-wrapper">
         <span class="material-icons google-icon">{{icon}}</span>
-    </div>
 </template>
 
 <script>
@@ -13,5 +11,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/generics/googleicon_style.scss">
 </style>

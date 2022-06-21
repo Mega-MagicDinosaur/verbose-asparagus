@@ -13,5 +13,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/generics/submitbutton_style.scss">
 </style>

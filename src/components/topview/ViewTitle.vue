@@ -14,3 +14,6 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="scss" src="../../assets/css/topview/viewtitle_style.scss">
+</style>

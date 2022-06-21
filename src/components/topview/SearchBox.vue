@@ -1,15 +1,15 @@
 <!-- icons+text here are going to be static, since they don't matter very much -->
 <template>
     <div class="search-box-wrapper">
-        <IconButton class="icon-button" icon="tune"/>
+        <IconButton icon="tune"/>
         <div class="active-filters-label">
             <span>Active Filters</span>
             <h3>{{active_filters.length}}/{{this.button_filters.length}}</h3> <!-- Change!! -->
         </div>
         <FiltersBox class="filters-box" :active_filters="this.active_filters" />
         <SubmitButton class="ssubmit-button" text="Save Search" />
-        <IconButton class="icon-button" icon="domain"/>
-        <div class="found-companies-label"> <!-- Radicaly change -->
+        <IconButton icon="domain"/>
+        <div class="found-companies-label"> <!-- Radically change -->
             <span>Found</span> <br>
             <span>loading...</span>
         </div>
@@ -41,5 +41,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/topview/searchbox_style.scss">
 </style>

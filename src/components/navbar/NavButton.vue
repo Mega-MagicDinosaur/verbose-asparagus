@@ -23,5 +23,5 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/navbar/navbutton_style.scss">
 </style>

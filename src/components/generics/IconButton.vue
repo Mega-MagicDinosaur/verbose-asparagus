@@ -1,6 +1,6 @@
 <template>
     <div class="icon-button-wrapper">
-        <button type="button" class="btn btn-primary icon-button">
+        <button class="btn btn-primary icon-button">
             <GoogleIcon class="google-icon" :icon="this.icon"/>
         </button>
     </div>
@@ -20,5 +20,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/generics/iconbutton_style.scss">
 </style>

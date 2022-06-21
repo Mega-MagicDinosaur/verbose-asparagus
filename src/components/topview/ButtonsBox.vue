@@ -1,10 +1,9 @@
 <template>
     <div class="buttons-box-wrapper">
         <div class="button-wrapper"  v-for="(button, index) in this.buttons" :key="button">
-            <IconButton type="button" class="btn btn-primary icon-button" 
-            :class="(index != selected_button)? 'button-unfocused':'button-focused'"
+            <IconButton :class="(index != selected_button)? 'button-unfocused':'button-focused'"
             @click="this.select_button(index)" :icon="button.icon" />
-            <span class="button-text">{{button.name}}</span>
+            <p class="button-text">{{button.name}}</p>
         </div>
     </div>
 </template>
@@ -32,5 +31,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/topview/buttonsbox_style.scss">
 </style>

@@ -1,0 +1,26 @@
+@import '../main_style.scss';
+
+.filters-editor-wrapper {
+    display: flex;
+
+    padding: 2vh 0vh;
+}
+
+.buttons-box {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1vh;
+}
+
+.search-box {
+    display: flex;
+
+    background-color: $secondary-color;
+
+    padding: 2.5vh 2vw;
+
+    width: 100%;
+    height: 18vh;
+
+    border-radius: 10px;    
+}
