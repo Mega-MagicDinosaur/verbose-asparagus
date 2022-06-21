@@ -1,6 +1,6 @@
 <template>
     <div class="filters-box-wrapper">
-        <FilterBox v-for="(filter) in this.active_filters" 
+        <FilterBox class="filter-box" v-for="(filter) in this.active_filters" 
         :key="filter" :active_filter="filter"/>
     </div>
 </template>
@@ -16,5 +16,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/topview/filtersbox_style.scss">
 </style>

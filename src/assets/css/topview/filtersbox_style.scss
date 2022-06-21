@@ -1,0 +1,11 @@
+@import '../main_style.scss';
+
+.filters-box-wrapper {
+
+    flex-wrap: wrap; // go next line when overflow
+}
+
+.filter-box {
+    display: flex;
+    float: left;
+}

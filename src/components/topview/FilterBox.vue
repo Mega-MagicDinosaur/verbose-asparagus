@@ -25,5 +25,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="../../assets/css/topview/filterbox_style.scss">
 </style>

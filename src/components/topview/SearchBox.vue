@@ -7,11 +7,11 @@
             <h3>{{active_filters.length}}/{{this.button_filters.length}}</h3> <!-- Change!! -->
         </div>
         <FiltersBox class="filters-box" :active_filters="this.active_filters" />
-        <SubmitButton class="ssubmit-button" text="Save Search" />
-        <IconButton icon="domain"/>
+        <SubmitButton class="submit-button" text="Save Search" />
+        <IconButton class="domain-button" icon="domain"/>
         <div class="found-companies-label"> <!-- Radically change -->
             <span>Found</span> <br>
-            <span>loading...</span>
+            <b><span>loading...</span></b>
         </div>
     </div>
 </template>
