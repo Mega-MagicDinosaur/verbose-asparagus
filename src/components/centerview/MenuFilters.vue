@@ -17,7 +17,13 @@ import FilterMenu from './FilterMenu.vue'
 export default {
     name: 'MenuFilters',
     components: { FilterMenu },
-    props: { filters: Array },
+    props: { 
+      filters: {
+        type: Array,
+        default: []
+      },
+      state: Boolean
+    },
     data() { 
       const s = []
       this.filters.forEach(filter => { s.push(false) })
@@ -25,7 +31,7 @@ export default {
           menus: s
     }},
     computed: {
-      selected_menu() { 
+      selected_menu() {
         for (let i=0; i<this.menus.length; i++) {
           if (this.menus[i]) { return i }
         } return null

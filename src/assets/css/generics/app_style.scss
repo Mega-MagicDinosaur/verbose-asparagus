@@ -12,5 +12,6 @@
 .center-view-wrapper {
     position: absolute;
 
-    left: 100px; // remove eventually
+    left: calc($navbar-width + 0vw);
+    top: calc((100vh - 150px) / 2); // 150px is topview-width
 }

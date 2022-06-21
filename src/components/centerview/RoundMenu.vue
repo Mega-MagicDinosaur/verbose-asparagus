@@ -6,7 +6,7 @@
       @clicked="clicked" :button="item" />
       <CenterButton class="center-button" />
     </div>
-    <MenuFilters class="menu-filters" :filters="this.filters"/>
+    <MenuFilters class="menu-filters" :filters="this.filters" :state="filters_state"/>
   </div>
 </template>
 
@@ -32,23 +32,22 @@ export default {
       turn: 45,
       items: b,
       buttons: [b[0],b[1],b[2],b[3]],
+      filters_state: false,
   }},
   computed: {
       first_button() { return this.buttons[0] },
-      filters() { return this.filters_data[this.first_button.id] },
-  },
-  watch: {
-    filters: { deep: true,
-      handler() { console.log('filters has changed!')}
-    }
+      filters() { 
+        if (!this.filters_state) { return undefined }
+        return this.filters_data[this.first_button.id] 
+      },
   },
   methods: {
     clicked(button_id) {
       let id = this.get_orientation(button_id)
-
       if (id == 3) { this.turn += 90 } 
       else { this.turn -= 90*id } 
       for (let i=0; i < id; i++) { this.buttons.push(this.buttons.shift()); }
+      this.filters_state = true
     },
     get_orientation(button_id) {
       for (let i=0; i<this.buttons.length; i++) {
