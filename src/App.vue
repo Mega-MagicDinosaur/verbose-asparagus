@@ -40,6 +40,14 @@ export default {
       filters: filters,
       nav_icons: nav_icons,
   }},
+  watch: {
+    filters: { deep: true,
+      handler() {
+        console.log('filters has changed!: ')
+        console.log(filters)
+      }
+    }
+  }
 }
 </script>
 

@@ -6,7 +6,7 @@
       @clicked="clicked" :button="item" />
       <CenterButton class="center-button" />
     </div>
-    <MenuFilters :filters="this.filters" @toggled_box="toggled_box"/>
+    <MenuFilters :filters="this.filters"/>
   </div>
 </template>
 
@@ -37,32 +37,24 @@ export default {
       first_button() { return this.buttons[0] },
       filters() { return this.filters_data[this.first_button.id] },
   },
+  watch: {
+    filters: { deep: true,
+      handler() { console.log('filters has changed!')}
+    }
+  },
   methods: {
-    clicked(clicked_item) {
-      let id = this.get_orientation(clicked_item)
-      let first = this.first_button.id
+    clicked(button_id) {
+      let id = this.get_orientation(button_id)
 
       if (id == 3) { this.turn += 90 } 
       else { this.turn -= 90*id } 
       for (let i=0; i < id; i++) { this.buttons.push(this.buttons.shift()); }
-
-      first = this.first_button.id
-      console.log(this.filters)
     },
-    get_orientation(name) {
+    get_orientation(button_id) {
       for (let i=0; i<this.buttons.length; i++) {
-        if (this.buttons[i].id == name) { return i }
+        if (this.buttons[i].id == button_id) { return i }
       } return 0
     },
-    /* toggled_box(filter_menu_pos, menu_pos) {
-      this.items.forEach(item => {
-        if (item.is_first) {
-          let filter = item.filters[menu_pos]
-          let box = filter.boxes[filter_menu_pos]
-          box.checked = !box.checked
-        }
-      });
-    }, */
   },
 }
 </script>
