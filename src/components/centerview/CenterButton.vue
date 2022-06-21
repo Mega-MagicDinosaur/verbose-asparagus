@@ -1,5 +1,5 @@
 <template>
-    <a><img src=""></a>
+    <a class="center-button"><img src=""></a>
 </template>
 
 <script>
@@ -10,8 +10,9 @@ export default {
 }
 </script>
 
-<style scoped>
-a {
-  background: #E2E2E2;
+<style scoped lang="scss">
+@import '../../assets/css/main_style.scss';
+.center-button {
+  background-color: $background-color;
 }
 </style>

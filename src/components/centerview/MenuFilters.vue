@@ -1,14 +1,12 @@
 <template>
 
-<div class="filter-menu">
-<div>
-    <TransitionGroup name="list">
-        <a v-for="(filter, index) in this.filters" :key="filter" class="filter-menu-item"> 
-          <FilterMenu :filter="filter" :selected="this.menus[index]" 
-          @clicked_menu="clicked_menu(filter)" />
-        </a>
-    </TransitionGroup>
-</div>
+<div class="menu-filters-wrapper">
+  <TransitionGroup name="list">
+    <a v-for="(filter, index) in this.filters" :key="filter" class="menu-filters-item">
+      <FilterMenu class="filter-menu" :filter="filter" :selected="this.menus[index]" 
+      @clicked_menu="clicked_menu(filter)" />
+    </a>
+  </TransitionGroup>
 </div>
 
 </template>
@@ -28,7 +26,6 @@ export default {
     }},
     computed: {
       selected_menu() { 
-        console.log('selected menu has changed.')
         for (let i=0; i<this.menus.length; i++) {
           if (this.menus[i]) { return i }
         } return null
@@ -49,6 +46,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped src="../../assets/css/centerview/menufilters_style.scss">
+<style scoped lang="scss" src="../../assets/css/centerview/menufilters_style.scss">
 
 </style>

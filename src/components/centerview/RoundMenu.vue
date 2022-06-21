@@ -1,12 +1,12 @@
 <template>
-  <div class="menu-container">
+  <div class="round-menu-wrapper">
     <div class="round-menu">
-      <MenuButton v-for="item in this.items" :key="item" 
-      class="menu-button" :style="{ transform: 'rotate('+ turn +'deg)'}" 
+      <MenuButton class="menu-button" v-for="item in this.items" :key="item" 
+      :style="{ transform: 'rotate('+ turn +'deg)'}" 
       @clicked="clicked" :button="item" />
       <CenterButton class="center-button" />
     </div>
-    <MenuFilters :filters="this.filters"/>
+    <MenuFilters class="menu-filters" :filters="this.filters"/>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
     const b = this.buttons_data
     return {
       turn: 45,
-      items:   b,
+      items: b,
       buttons: [b[0],b[1],b[2],b[3]],
   }},
   computed: {
@@ -59,6 +59,5 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../../assets/css/centerview/roundmenu_style.css';
+<style scoped lang="scss" src="../../assets/css/centerview/roundmenu_style.scss">
 </style>

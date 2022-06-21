@@ -1,20 +1,23 @@
+@import '../main_style.scss';
 
-.menu-item, .filter-menu-dropdown {
+.menu-item, .filter-menu-wrapper {
     position: relative;
     list-style: none;
     
     margin: 0 auto;
-    border-left: 2px solid #4E8CFC;
     
     text-decoration: none;
     text-align: center;
 }
-.menu-item, .menu-title, .menu-icon { cursor: pointer; }
+.menu-item, .menu-title, .google-icon { cursor: pointer; }
 .menu-item .menu-text { padding-left: 5px; }
 
-.menu-icon { 
+.google-icon { 
     position: relative;
-    font-size: 22px; 
+
+    font-size: 28px;
+
+    color: $primary-color;
 }
 .menu-title { 
     position: relative;
@@ -36,18 +39,16 @@
 
     &:hover .menu-text{
         padding-left: 10px;
-        border-left: 2px solid #4E8CFC;
-    
         transition: all 0.3s ease;
     }
 }
-.filter-menu-dropdown {
+.filter-menu-wrapper {
     padding: 0 15px;
 
     &:hover .menu-title {
         margin: 0px 0px 0px 10px;
         padding: 0px 40px 0px 80px;
-        border-bottom: 2px solid #4E8CFC;
+        border-bottom: 2px solid $primary-color;
     }
 
     &:hover .dropdown {
@@ -85,14 +86,14 @@
     &:hover .menu-title {
         margin: 0px 0px 0px 10px;
         padding: 0px 40px 0px 80px;
-        border-bottom: 2px solid #4E8CFC;
+        border-bottom: 2px solid $primary-color;
     }
 }
-.menu-text {
-    color: #000000;
-    text-decoration: none;
-    
+.menu-text {    
     transition: all 0.5s ease; 
-    
-    &:hover { color: #3ca0e7; }
+
+    text-decoration: none;
+    font-size: 16px;
+    font-family: $text-font;
+    color: $text-color;
 }

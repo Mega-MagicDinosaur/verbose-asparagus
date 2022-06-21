@@ -1,7 +1,8 @@
 <template>
 
-    <div class="filter-menu-dropdown">
-        <GoogleIcon class="menu-icon"  @click="this.$emit('clicked_menu', this.filter)" :icon="filter.icon" />
+    <div class="filter-menu-wrapper">
+        <!-- menu-icon -->
+        <GoogleIcon class="google-icon"  @click="this.$emit('clicked_menu', this.filter)" :icon="filter.icon" />
         <span v-if="this.selected" class="menu-text menu-title">{{this.filter.name}}</span>
         <ul v-if="this.selected" class="dropdown">
             <li v-for="(box, index) in this.filter.boxes" @click="invert(index)" :key="box" class="menu-item">
@@ -30,5 +31,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped src="../../assets/css/centerview/filtermenu_style.scss">
+<style scoped lang="scss" src="../../assets/css/centerview/filtermenu_style.scss">
 </style>
