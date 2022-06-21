@@ -6,7 +6,7 @@
       @clicked="clicked" :button="item" />
       <CenterButton class="center-button" />
     </div>
-    <MenuFilters :filters="filters" @toggled_box="toggled_box"/>
+    <MenuFilters :filters="this.filters" @toggled_box="toggled_box"/>
   </div>
 </template>
 
@@ -23,7 +23,8 @@ export default {
     MenuFilters,
   },
   props: {
-    buttons_data: Object
+    buttons_data: Array,
+    filters_data: Array
   },
   data() { 
     const b = this.buttons_data
@@ -31,61 +32,37 @@ export default {
       turn: 45,
       items:   b,
       buttons: [b[0],b[1],b[2],b[3]],
-      filters: [],
   }},
+  computed: {
+      first_button() { return this.buttons[0] },
+      filters() { return this.filters_data[this.first_button.id] },
+  },
   methods: {
     clicked(clicked_item) {
-      let position = this.getPosition(clicked_item)
-      let first = this.buttons[0].position
-      for (let i=0; i<this.items.length; i++) { 
-				if (this.items[i].position === first) { 
-					this.items[i].is_first = false 
-			}}
-      if (position == 1){ // change later
-        this.turn -= 90
-        this.arrayRotate(this.buttons, false, 1)
-      }
-      else if (position == 2) {
-        this.turn -= 90*2
-        this.arrayRotate(this.buttons, false, 2)
-      }
-      else if (position == 3) {
-        this.turn += 90
-        this.arrayRotate(this.buttons, true, 1)
-      }
-      first = this.buttons[0].id
-      for (let i=0; i<this.items.length; i++) {
-        if (this.items[i].id === first) { 
-          this.items[i].is_first = true 
-          this.filters = this.items[i].filters
-        }
-      }
+      let id = this.get_orientation(clicked_item)
+      let first = this.first_button.id
+
+      if (id == 3) { this.turn += 90 } 
+      else { this.turn -= 90*id } 
+      for (let i=0; i < id; i++) { this.buttons.push(this.buttons.shift()); }
+
+      first = this.first_button.id
+      console.log(this.filters)
     },
-    toggled_box(filter_menu_pos, menu_pos) {
-      console.log('toggled_box', filter_menu_pos,  menu_pos)
-      console.log(this.items)
-      for (let i=0; i<this.items.length; i++) {
-        let item = this.items[i]
+    get_orientation(name) {
+      for (let i=0; i<this.buttons.length; i++) {
+        if (this.buttons[i].id == name) { return i }
+      } return 0
+    },
+    /* toggled_box(filter_menu_pos, menu_pos) {
+      this.items.forEach(item => {
         if (item.is_first) {
           let filter = item.filters[menu_pos]
           let box = filter.boxes[filter_menu_pos]
           box.checked = !box.checked
         }
-      }
-    },
-    arrayRotate(arr, reverse, loop) {
-      for (let i = 0; i < loop; i++) { 
-        if (reverse) arr.unshift(arr.pop());
-        else arr.push(arr.shift());
-      }
-      return arr;
-    },
-    getPosition(name) {
-      for (let i=0; i<this.buttons.length; i++) {
-        if (this.buttons[i].id == name) { return i }
-      }
-      return 0
-    },
+      });
+    }, */
   },
 }
 </script>
