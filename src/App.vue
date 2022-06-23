@@ -13,6 +13,7 @@
       <div class="center-view-wrapper">
         <RoundMenu :buttons_data="this.buttons" :filters_data="this.filters" :rings_data="this.rings"
         :state="this.state" />
+        
         <SubmitButton text="NORDLYS ALGORYTHM" class="nordlys-button" 
         :class="(this.state.str == 'initial')? 'initial-state' : 'changed-state'"
         @click="this.state.str = 'cards'"/>

@@ -1,6 +1,8 @@
 <template>
 <div class="menu-cards-wrapper">
-  <CardRing v-for="(ring) in this.rings" :key="ring" :ring="ring" />
+  <TransitionGroup name="card-ring">
+    <CardRing v-for="(ring) in this.rings" :key="ring" :ring="ring" class="size-3"/>
+  </TransitionGroup>
 </div>
 </template>
 
@@ -16,6 +18,5 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="">
-
+<style scoped lang="scss" src="../../assets/css/centerview/menucards_style.scss">
 </style>

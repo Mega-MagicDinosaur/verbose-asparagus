@@ -15,5 +15,5 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="scss" src="../../assets/css/centerview/companycard_style.scss">
 </style>

@@ -18,4 +18,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss" src="../../assets/css/centerview/cardring_style.scss"></style>

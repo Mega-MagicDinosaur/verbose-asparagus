@@ -12,7 +12,7 @@ $opening-angle: $pi/2;
   transform-origin: center;
 
   left: 50%;
-  top: -55%;
+  top: -55%; // 55% is because of icon size, so offset is applied
 }
 
 @mixin menu-filters-item($item-number) {
@@ -31,7 +31,6 @@ $opening-angle: $pi/2;
   }
 }
 
-/* MENU FILTER SIZES */
 .size-1 { @include menu-filters-item(1) }
 .size-2 { @include menu-filters-item(2) }
 .size-3 { @include menu-filters-item(3) }
@@ -40,8 +39,6 @@ $opening-angle: $pi/2;
 .size-6 { @include menu-filters-item(6) }
 .size-7 { @include menu-filters-item(7) }
 .size-8 { @include menu-filters-item(8) }
-
-/* LIST ACTIVES */
 
 .list-enter-active,
 .list-leave-active {
