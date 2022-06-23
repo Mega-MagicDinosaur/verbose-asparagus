@@ -7,6 +7,7 @@
       <CenterButton class="center-button" />
     </div>
     <MenuFilters v-show="(this.state.str == 'filters')" class="menu-filters" :filters="this.filters"/>
+    <MenuCards v-show="(this.state.str == 'cards')" class="menu-cards" :rings="this.rings_data"/>
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import MenuButton from './MenuButton.vue'
 import CenterButton from './CenterButton.vue'
 import MenuFilters from './MenuFilters.vue'
+import MenuCards from './MenuCards.vue'
 
 export default {
   name: 'RoundMenu',
@@ -21,10 +23,12 @@ export default {
     MenuButton,
     CenterButton,
     MenuFilters,
+    MenuCards
   },
   props: {
     buttons_data: Array,
     filters_data: Array,
+    rings_data: Array,
     state: Object
   },
 

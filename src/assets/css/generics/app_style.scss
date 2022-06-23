@@ -27,7 +27,7 @@
 
     &.initial-state {
         position: absolute;
-        top: calc( ($radar-menu-height / 2) - 18px );
+        top: calc( ($radar-menu-height / 2) - 18px + $topview-height / 2);
         left: $radar-menu-width;
     }
 

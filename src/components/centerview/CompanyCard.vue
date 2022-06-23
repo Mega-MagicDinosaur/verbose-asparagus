@@ -1,15 +1,17 @@
 <template>
-    <div>
-        
+    <div class="company-card-wrapper">
+        <p>{{card}}</p>
     </div>
 </template>
 
 <script>
 export default {
     name: 'CompanyCard',
-    
+    props: {
+        card: Object
+    }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 </style>
