@@ -1,7 +1,7 @@
 <template>
 <div class="card-ring-wrapper">
-    <TransitionGroup v-for="(card) in rings" :key="card" name="ring">
-        <CompanyCard />
+    <TransitionGroup name="ring">
+        <CompanyCard v-for="(card) in this.ring" :key="card" :card="card"/>
     </TransitionGroup>
 </div>
 </template>

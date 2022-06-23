@@ -79,7 +79,7 @@ const companies = [
         100, 10, 1950,
         'some_text_here! 8', 'https://img'),
 
-    new Company('name1', 'country9', 'https://web9',
+    new Company('name10', 'country9', 'https://web9',
         'sector9', ['sector_1o', 'sector_2o'], ['product_1', 'product_2'],
         100, 10, 1950,
         'some_text_here! 9', 'https://img'),

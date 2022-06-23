@@ -1,6 +1,8 @@
 <template>
     <div class="company-card-wrapper">
-        <p>{{card}}</p>
+        <div class="company-card">
+            <p>{{this.card.name}}</p>
+        </div>
     </div>
 </template>
 

@@ -2,10 +2,10 @@
 
 <div class="menu-filters-wrapper">
   <TransitionGroup name="list">
-    <a v-for="(filter, index) in this.filters" :key="filter" class="menu-filters-item">
-      <FilterMenu class="filter-menu" :filter="filter" :selected="this.menus[index]" 
-      @clicked_menu="clicked_menu(filter)" />
-    </a>
+      <a v-for="(filter, index) in this.filters" :key="filter" :class="'size-'+this.filters.length">
+        <FilterMenu class="filter-menu" :filter="filter" :selected="this.menus[index]" 
+        @clicked_menu="clicked_menu(filter)" />
+      </a>
   </TransitionGroup>
 </div>
 
@@ -18,6 +18,7 @@ export default {
     name: 'MenuFilters',
     components: { FilterMenu },
     props: { 
+      // size of filters can be a range from 1 to 8
       filters: {
         type: Array,
         default: []
