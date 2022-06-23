@@ -22,7 +22,6 @@ export default {
         type: Array,
         default: []
       },
-      state: Boolean
     },
     data() { 
       const s = []

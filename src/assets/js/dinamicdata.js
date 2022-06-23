@@ -17,6 +17,25 @@ class Filter {
     }
 }
 
+class Company {
+    constructor(name, country, website, 
+        primary_sector, other_sectors, products, 
+        turnover, employees, foundation_year, 
+        about, img) {
+        this.name = name
+        this.country = country
+        this.website = website
+        this.primary_sector = primary_sector
+        this.other_sectors = other_sectors
+        this.products = products
+        this.turnover = turnover
+        this.employees = employees
+        this.foundation_year = foundation_year
+        this.about = about
+        this.img = img
+    }
+}
+
 const filters = [
     [
         new Filter('filter1', 'vpn_key',            [new Box('box1'), new Box('box2'), new Box('box3')]),

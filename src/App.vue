@@ -11,7 +11,13 @@
         <FiltersEditor class="filters-editor" :filters="this.filters" :buttons="this.buttons" />
       </div> 
       <div class="center-view-wrapper">
-        <RoundMenu :buttons_data="this.buttons" :filters_data="this.filters" />
+        <RoundMenu :buttons_data="this.buttons" :filters_data="this.filters" :state="this.state" />
+        <SubmitButton text="NORDLYS ALGORYTHM" class="nordlys-button" 
+        :class="(this.state.str == 'initial')? 'initial-state' : 'changed-state'"
+        @click="this.state.str = 'cards'"/>
+        <!-- later make separate goto list button  -->
+        <SubmitButton :text="(this.state.str != 'cards')? 'SEARCH' : 'GO TO LIST' " class="search-button"
+        :class="(this.state.str == 'initial')? 'initial-state' : 'changed-state'"/>
       </div>
     </div>
   </main>
@@ -22,6 +28,7 @@ import ViewTitle from './components/topview/ViewTitle.vue'
 import FiltersEditor from './components/topview/FiltersEditor.vue'
 import VerticalNav from './components/navbar/VerticalNav.vue'
 import RoundMenu from './components/centerview/RoundMenu.vue'
+import SubmitButton from './components/generics/SubmitButton.vue'
 
 import { buttons } from './assets/js/staticdata.js'
 import { nav_icons } from './assets/js/staticdata.js'
@@ -33,12 +40,18 @@ export default {
     VerticalNav,
     FiltersEditor,
     ViewTitle,
-    RoundMenu
+    RoundMenu,
+    SubmitButton
 },
   data() { return {
       buttons: buttons,
       filters: filters,
       nav_icons: nav_icons,
+      
+      // state is designed to go in one direction,
+      // initial -> filters -> cards
+      // if state is cards, it cannot go back to filters.
+      state: {str: 'initial'}
   }},
   watch: {
     filters: { deep: true,

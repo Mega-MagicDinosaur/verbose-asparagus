@@ -12,6 +12,50 @@
 .center-view-wrapper {
     position: absolute;
 
-    left: calc($navbar-width + 0vw);
-    top: calc((100vh - 150px) / 2); // 150px is topview-width
+    width: calc(100% - $navbar-width);
+    height: calc(100% - $topview-height);
+
+    left: $navbar-width;
+}
+
+.nordlys-button {
+    display: initial;
+
+    transition-property: top, left, padding, transform;
+    transition-duration: 1s, 1s, 1s, 1s;
+    transition-timing-function: ease, ease-in-out, ease, ease;
+
+    &.initial-state {
+        position: absolute;
+        top: calc( ($radar-menu-height / 2) - 18px );
+        left: $radar-menu-width;
+    }
+
+    &.changed-state {
+        position: absolute;
+        padding: 5vmin;
+        transform: translate(0%,-100%);
+
+        top:  calc(100vh - $topview-height);
+        left: 0;
+    }
+}
+
+.search-button {
+    position: absolute;
+    
+    padding: 5vmin;
+    
+    bottom:0;
+    right:0;
+
+    transition: opacity 1s;
+
+    &.initial-state {
+        opacity: 0.5;
+    }
+
+    &.changed-state {
+        opacity: 1;
+    }
 }
